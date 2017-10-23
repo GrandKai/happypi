@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magic.happypi.syetem.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.magic.happypi.system.entity.User">
+
+        <result column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="real_name" property="realName"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="password" property="password"/>
+        <result column="enabled" property="enabled"/>
+        <result column="account_none_locked" property="accountNoneLocked"/>
+        <result column="disabled_desc" property="disabledDesc"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateTime"/>
+        <result column="update_time" property="userId"/>
+        <result column="account_none_expired" property="accountNoneExpired"/>
+        <result column="credentials_none_expired" property="credentialsNoneExpired"/>
+
+    </resultMap>
+
+    <resultMap id="BaseResultMapVo" type="com.magic.happypi.system.vo.UserVo" extends="BaseResultMap">
+
+        <association property="userDetail" column="user_id"
+        select="com.magic.happypi.syetem.mapper.UserDetailMapper.selectByPrimaryKey"
+        javaType="com.magic.happypi.system.entity.UserDetail" fetchType="lazy"/>
+        
+        <!-- 如果 column 要传入多个参数 {userId=user_id, a = b} , 子查询 findRoleByUserId 中需要执行 parameterType = java.util.Map -->
+        <collection property="roleList" column="{userId=user_id}"
+                    select="com.magic.happypi.syetem.mapper.RoleMapper.findRoleByUserId"
+                    ofType="com.magic.happypi.system.entity.Role" />
+    </resultMap>
+
+    <select id="findByNameAndPassword" resultMap="com.magic.happypi.syetem.mapper.UserMapper.BaseResultMap">
+        SELECT * FROM user where user_name = #{userName} and password = #{password} AND account_none_locked = 1
+    </select>
+    <select id="findUserVoByNameAndPassword" resultMap="com.magic.happypi.syetem.mapper.UserMapper.BaseResultMapVo">
+        SELECT * FROM user where user_name = #{userName} and password = #{password} AND account_none_locked = 1
+    </select>
+
+    <select id="searchPage" parameterType="map" resultType="com.magic.happypi.system.entity.User">
+        select * from user where 1 = 1
+        <if test="whereParam != ''">
+            ${whereParam}
+        </if>
+        <if test="orderParam != ''">
+            ${orderParam}
+        </if>
+    </select>
+
+
+
+</mapper>

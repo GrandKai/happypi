@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magic.happypi.mapper.CustomerMapper">
+    <resultMap id="BaseResultMap" type="com.magic.happypi.business.entity.Customer">
+        <constructor>
+            <idArg column="customer_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="customer_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="birthday" javaType="java.util.Date" jdbcType="DATE" />
+            <arg column="nickname" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="head_pic" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="mobile" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="gender" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="country" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="province" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="city" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="district" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="whatsup" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+            <arg column="create_by" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+            <arg column="update_by" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="address_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="integration" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+        customer_id, customer_name, birthday, nickname, head_pic, mobile, gender, country,
+        province, city, district, remark, whatsup, create_time, create_by, update_time, update_by,
+        address_id, integration
+    </sql>
+
+</mapper>

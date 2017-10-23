@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magic.happypi.syetem.mapper.MenuMapper">
+    <resultMap id="BaseResultMap" type="com.magic.happypi.system.entity.Menu">
+        <result column="menu_id" property="menuId"/>
+        <result column="menu_name" property="menuName"/>
+        <result column="menu_url" property="menuUrl"/>
+        <result column="menu_image" property="menuImage"/>
+        <result column="menu_type" property="menu_type"/>
+        <result column="order_num" property="orderNum"/>
+        <result column="is_leaf" property="isLeaf"/>
+        <result column="parent_id" property="parentId"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMapVo" type="com.magic.happypi.system.vo.MenuVo" extends="BaseResultMap">
+        <collection property="subMenu" column="{parentId=menu_id}"
+                    select="selectSubMenusByParentId"
+                    ofType="com.magic.happypi.system.vo.MenuVo"/>
+    </resultMap>
+  <select id="findMenuByRoleIds" parameterType="java.util.List" resultType="com.magic.happypi.system.entity.Menu">
+    select b.* from role_menu_rela a inner join menu b on a.menu_id = b.menu_id
+        where a.role_id in
+        <foreach item="item" index="index" collection="list"
+                 open="(" separator="," close=")">
+              #{item}
+        </foreach>
+      group by b.menu_id order by b.is_leaf,b.order_num ASC
+  </select>
+
+    <!--<select id="findMenuByRoles" resultType="com.magic.happypi.system.entity.Menu">-->
+    <select id="findMenuByRoles" resultMap="BaseResultMapVo">
+        select b.* from role_menu_rela a inner join menu b on a.menu_id = b.menu_id
+        where a.role_id in
+        <foreach item="item" index="index" collection="roles"
+                 open="(" separator="," close=")">
+            #{item.roleId}
+        </foreach>
+        group by b.menu_id order by b.is_leaf,b.order_num ASC
+    </select>
+    
+    <select id="selectSubMenusByParentId" resultMap="BaseResultMapVo">
+        select * from menu where parent_id = #{parentId}
+    </select>
+
+</mapper>

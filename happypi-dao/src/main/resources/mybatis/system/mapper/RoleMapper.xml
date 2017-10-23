@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magic.happypi.syetem.mapper.RoleMapper">
+
+  <resultMap id="BaseResultMap" type="com.magic.happypi.system.entity.Role">
+    <result column="role_id" property="roleId"/>
+    <result column="role_name" property="roleName"/>
+    <result column="role_desc" property="roleDesc"/>
+    <result column="status" property="status"/>
+    <result column="role_type" property="roleType"/>
+    <result column="create_by" property="createBy"/>
+    <result column="create_time" property="createTime"/>
+    <result column="update_time" property="updateTime"/>
+    <result column="update_by" property="updateBy"/>
+  </resultMap>
+
+  <select id="findRoleByUserId" resultType="com.magic.happypi.system.entity.Role">
+    select b.* from user_role_rela a inner join role b on a.role_id = b.role_id
+    <where>
+      <if test="userId!=null and userId!=''">
+        a.user_id = #{userId}
+      </if>
+    </where>
+  </select>
+
+</mapper>

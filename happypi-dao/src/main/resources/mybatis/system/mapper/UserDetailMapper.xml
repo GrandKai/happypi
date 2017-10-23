@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.magic.happypi.syetem.mapper.UserDetailMapper">
+    <resultMap id="BaseResultMap" type="com.magic.happypi.system.entity.UserDetail">
+        <result column="user_id" property="userId"/>
+        <result column="gender" property="gender"/>
+        <result column="mobile" property="mobile"/>
+        <result column="email" property="email"/>
+        <result column="wechat" property="wechat"/>
+        <result column="qq" property="qq"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateTime"/>
+        <result column="update_time" property="userId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, user_id, gender, mobile, email, wechat, qq, create_time, create_by, update_time, 
+    update_by
+  </sql>
+</mapper>

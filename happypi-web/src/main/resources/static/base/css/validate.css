@@ -1,0 +1,23 @@
+/************jQuery.Validate插件样式开始********************/    
+label.error {
+	background:url(../images/tips.gif) 5px 3px no-repeat;
+	padding-left:20px;
+	padding-right:5px;
+	color:#d31717;
+	background-color:#fef6f3;
+	font-size:12px;
+	height:23px;
+	line-height:23px;
+	display:inline-block;
+	border:1px solid #bd2020;
+}
+input.error {
+	background-color:#fbec87;
+}
+select.error {
+	background-color:#fbec87;
+}
+textarea.error {
+	background-color:#fbec87;
+} 
+/************jQuery.Validate插件样式结束********************/

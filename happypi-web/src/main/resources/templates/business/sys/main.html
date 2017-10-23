@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <title ></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <link rel="shortcut icon" href="favicon.ico"/> 
+    <link href="../../../bootstrap/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet"/>
+    <link href="../../../bootstrap/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet"/>
+
+
+    <link href="../../../bootstrap/css/plugins/datapicker/datepicker3.css" rel="stylesheet"/>
+    <link href="../../../bootstrap/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet"/>
+
+    <link href="../../../bootstrap/css/plugins/chosen/chosen.css" rel="stylesheet"/>
+    
+    <!-- jqgrid-->
+    <link href="../../../bootstrap/css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet"/>
+
+    <link href="../../../bootstrap/css/animate.min.css" rel="stylesheet"/>
+    <link href="../../../bootstrap/css/style.min862f.css?v=4.1.0" rel="stylesheet"/>
+    <link href="../../../bootstrap/css/plugins/iCheck/custom.css" rel="stylesheet"/>
+    
+    <link href="../../../base/css/validate.css"/>
+
+
+    <style>
+        /* Additional style to fix warning dialog position */
+
+        #alertmod_table_list_2 {
+            top: 900px !important;
+        }
+		.datepicker{z-index:99999 !important;}
+    </style>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content  animated fadeInRight" id="main_page_all">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox ">
+                    <div class="ibox-content">
+                        <div class="widget style1 navy-bg" style="height: 260px;">
+		                    <div class="row vertical-align">
+		                    	<div style="float:left;padding-left: 10px;">
+		                    		<div class="font-bold" >今日待办</div><br/>
+		                            <div class="font-bold" style="padding-left: 20px;padding-top: 10px;">
+		                            	用车计划待处理：<div id="treatmentPlan"></div>条
+		                            </div>
+		                    	</div>
+	                            <div style="float:right;padding-right: 10px;">
+	                            	<div class="font-bold" style="padding-left: 10px;">今日停驶车辆</div><br/>
+	                            	<div id="vehicleList">
+	                            	</div>
+	                            </div>
+		                    </div>
+		                </div>
+                    </div>
+                    <div class="ibox-content">
+                    	<button class="btn btn-info  dim btn-large-dim btn-outline" type="button" style="width: 32%;">
+                    		<img alt="" src="../base/images/u653.jpg" style="width: 30%;height: 50%;"/>
+                    		<i class="btn btn-danger font-bold" id="vehiclesNumAll">车辆总数：</i>
+                    	</button>
+                    	<button class="btn btn-info  dim btn-large-dim btn-outline" type="button" style="width: 32%;">
+                    		<img alt="" src="../base/images/u653.jpg" style="width: 30%;height: 50%;"/>
+                    		<i class="btn btn-danger font-bold" id="vehiclesNumhave">自有车辆：</i>
+                    	</button>
+                    	<button class="btn btn-info  dim btn-large-dim btn-outline" type="button" style="width: 32%;">
+                    		<img alt="" src="../base/images/u653.jpg" style="width: 30%;height: 50%;"/>
+                    		<i class="btn btn-danger font-bold" id="vehiclesNumAbroad">外协车辆：</i>
+                    	</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../bootstrap/js/jquery.min.js?v=2.1.4"></script>
+    <script src="../../../bootstrap/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../../bootstrap/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="../../../bootstrap/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../../bootstrap/js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../../../bootstrap/js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../../../bootstrap/js/content.min.js?v=1.0.0"></script>
+    <script src="../../../bootstrap/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="../../../bootstrap/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="../../../bootstrap/js/jquery.showLoading.min.js"></script>
+    <script src="../../../bootstrap/js/plugins/chosen/chosen.jquery.js"></script>
+    <script src="../../../bootstrap/js/plugins/layer/layer.min.js"></script>
+    
+    <script src="../../../base/js/jqValidate.js"></script>
+    <script src="../../../base/js/util.js"></script>
+    <script src="../../../base/js/jqGrid.js"></script>
+	<script src="../../../base/js/ajax.js"></script>
+	<script src="../../../base/js/message.js"></script>
+    <script src="../../js/sys/main.js"></script>
+</body>
+
+
+</html>

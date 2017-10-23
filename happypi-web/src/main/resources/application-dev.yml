@@ -1,0 +1,60 @@
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://58.87.102.158:3306/entertainmentparty?useUnicode=true&characterEncoding=utf8&&zeroDateTimeBehavior=convertToNull&autoReconnect=true
+    username: songxiaochuan
+    password: sxc123456
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+    mode: HTML5
+    cache: false
+#    enabled: true
+  http:
+    converters:
+      preferred-json-mapper: fastjson
+    encoding:
+      charset: UTF-8
+
+  devtools:
+    restart:
+      enabled: true
+#      additional-paths: src/main/java
+    livereload:
+      enabled: true
+  mvc:
+    date-format: yyyy-MM-dd
+  profiles:
+    active: dev
+
+server:
+  port: 9090
+logging:
+  level.com.magic.happypi: debug
+mybatis:
+  type-aliases-package: com.magic.happypi.*.entity
+  mapper-locations: classpath:mybatis/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  check-config-location: false
+mapper:
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helper-dialect: mysql
+  offset-as-page-num: false
+  row-bounds-with-count: true
+  page-size-zero: false
+  reasonable: true
+  support-methods-arguments: true
+  auto-runtime-dialect: true
+  close-conn: true
+  params: count=countSql
+

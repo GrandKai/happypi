@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:23 GMT -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title ></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <link rel="shortcut icon" href="favicon.ico"/>
+	<link href="../bootstrap/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet"/>
+    <link href="../bootstrap/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet"/>
+
+    <link href="../bootstrap/css/animate.min.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/style.min862f.css?v=4.1.0" rel="stylesheet"/>
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+</head>
+<style type="text/css">
+        .bg-blur {
+			float: left;
+			width: 100%;
+			height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            -webkit-filter: blur(15px);
+            -moz-filter: blur(15px);
+            -o-filter: blur(15px);
+            -ms-filter: blur(15px);
+            filter: blur(15px);
+        }
+    </style>
+<body class="">
+
+<!-- =================================================== -->
+<div style="position:relative;">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" style="width: 100%;height: 100%; z-index: 199;position:absolute;opacity:0.3; filter: alpha(opacity=30); background-color:#000;">
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="../images/00.jpg" class="bg-blur" />
+			</div>
+			<div class="item">
+				<img src="../images/11.jpg" class="bg-blur"/>
+			</div>
+			<div class="item">
+				<img src="../images/22.jpg" class="bg-blur"/>
+			</div>
+		</div>
+	</div> 
+	<div class="middle-box text-center loginscreen  animated fadeInDown" style="z-index: 999;position:absolute;top:50%;left:40%;">
+        <div>
+            <div>
+                <h1 class="logo-name"><font size="40sp;" color="#8A8A8A">内部管理系统</font></h1>
+            </div>
+            <h3>欢迎使用</h3>
+            <form id="form" class="m-t"  action="/login/login">
+                <div class="form-group">
+                    <input class="form-control" placeholder="用户名" name="userName" id="userName"/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" placeholder="密码" name="passwd" id="passwd"/>
+                </div>
+                <button type="button" class="btn btn-primary block full-width m-b" id="loginButton">登 录</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="../bootstrap/js/jquery.min.js?v=2.1.4"></script>
+    <script src="../bootstrap/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../bootstrap/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="../../../bootstrap/js/plugins/layer/layer.min.js"></script>
+    <script src="../base/js/message.js"></script>
+    <script src="../base/js/jqValidate.js"></script>
+    <script src="../base/js/ajax.js"></script>
+    
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
