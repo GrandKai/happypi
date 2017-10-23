@@ -3,9 +3,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://58.87.102.158:3306/entertainmentparty?useUnicode=true&characterEncoding=utf8&&zeroDateTimeBehavior=convertToNull&autoReconnect=true
-    username: songxiaochuan
-    password: sxc123456
+    url: jdbc:mysql://127.0.0.1:3306/happypi?useUnicode=true&characterEncoding=utf8&&zeroDateTimeBehavior=convertToNull&autoReconnect=true
+    username: root
+    password: mysql
 
   thymeleaf:
     prefix: classpath:/templates/
@@ -25,7 +25,7 @@ spring:
   devtools:
     restart:
       enabled: true
-#      additional-paths: src/main/java
+      additional-paths: happypi-web/src/main/java
     livereload:
       enabled: true
   mvc:

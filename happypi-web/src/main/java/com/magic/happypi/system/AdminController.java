@@ -2,7 +2,6 @@ package com.magic.happypi.system;
 
 import com.magic.happypi.system.entity.User;
 import com.magic.happypi.system.service.impl.UserService;
-import com.magic.happypi.system.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,17 +38,19 @@ public class AdminController {
     @PostMapping("login")
     public String loginPost(User admin, Model model, HttpSession httpSession) {
 //        User adminRes = userService.findByNameAndPassword(admin.getUserName(), admin.getPassword());
-        UserVo adminRes = userService.findUserVoByNameAndPassword(admin.getUserName(), admin.getPassword());
+//        UserVo adminRes = userService.findUserVoByNameAndPassword(admin.getUserName(), admin.getPassword());
 
-        if (adminRes != null) {
-            httpSession.setAttribute("admin", adminRes);
-            model.addAttribute("admin", admin);
-            model.addAttribute("menus", adminRes.getMenuList());
-            return "redirect:index";
-        } else {
-            model.addAttribute("error", "用户名或密码错误，请重新登录！");
-            return "login";
-        }
+//        if (adminRes != null) {
+//            httpSession.setAttribute("admin", adminRes);
+//            model.addAttribute("admin", admin);
+//            model.addAttribute("menus", adminRes.getMenuList());
+//            return "redirect:index";
+//        } else {
+//            model.addAttribute("error", "用户名或密码错误，请重新登录！");
+//            return "login";
+//        }
+
+        return "redirect:index";
     }
 
     @GetMapping("index")
